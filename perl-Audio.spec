@@ -7,7 +7,7 @@ Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl):	Modu³ Perla Audio - pocz±tki funkcji do obróbki d¼wiêku w Perlu
 Name:		perl-Audio
 Version:	1.000
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
@@ -15,7 +15,7 @@ Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
 BuildRequires:	nas-devel
 BuildRequires:	perl-devel >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -71,7 +71,8 @@ Modu³ Perla Audio - pliki nag³ówkowe.
 %patch1 -p1
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{?_with_tests:%{__make} test}
@@ -95,36 +96,36 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README 
 %attr(755,root,root) %{_bindir}/Audio-[dmp]*
-%{perl_sitearch}/Audio/*.pm
-%{perl_sitearch}/Audio/Data
-%dir %{perl_sitearch}/Audio/Play
-%{perl_sitearch}/Audio/Play/linux.pm
-%dir %{perl_sitearch}/auto/Audio/Data
-%{perl_sitearch}/auto/Audio/Data/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Audio/Data/*.so
-%dir %{perl_sitearch}/auto/Audio/Play
-%{perl_sitearch}/auto/Audio/Play/autosplit.ix
-%dir %{perl_sitearch}/auto/Audio/Play/linux
-%{perl_sitearch}/auto/Audio/Play/linux/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Audio/Play/linux/*.so
+%{perl_vendorarch}/Audio/*.pm
+%{perl_vendorarch}/Audio/Data
+%dir %{perl_vendorarch}/Audio/Play
+%{perl_vendorarch}/Audio/Play/linux.pm
+%dir %{perl_vendorarch}/auto/Audio/Data
+%{perl_vendorarch}/auto/Audio/Data/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Audio/Data/*.so
+%dir %{perl_vendorarch}/auto/Audio/Play
+%{perl_vendorarch}/auto/Audio/Play/autosplit.ix
+%dir %{perl_vendorarch}/auto/Audio/Play/linux
+%{perl_vendorarch}/auto/Audio/Play/linux/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Audio/Play/linux/*.so
 %{_mandir}/man3/*
 
 %files Play-Net
 %defattr(644,root,root,755)
-%{perl_sitearch}/Audio/Play/Net.pm
-%dir %{perl_sitearch}/auto/Audio/Play/Net
-%{perl_sitearch}/auto/Audio/Play/Net/*.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Audio/Play/Net/*.so
+%{perl_vendorarch}/Audio/Play/Net.pm
+%dir %{perl_vendorarch}/auto/Audio/Play/Net
+%{perl_vendorarch}/auto/Audio/Play/Net/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Audio/Play/Net/*.so
 
 %files Tk
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/Audio-t*
-%{perl_sitearch}/Tk/Scope.pm
+%{perl_vendorarch}/Tk/Scope.pm
 
 %files devel
 %defattr(644,root,root,755)
 %doc README.Porting
-%{perl_sitearch}/Audio/*.h
-%{perl_sitearch}/Audio/*.m
-%{perl_sitearch}/Audio/*.t
-%{perl_sitearch}/Audio/typemap
+%{perl_vendorarch}/Audio/*.h
+%{perl_vendorarch}/Audio/*.m
+%{perl_vendorarch}/Audio/*.t
+%{perl_vendorarch}/Audio/typemap
