@@ -10,7 +10,7 @@ Version:	0.005
 Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
 BuildRequires:	nas-devel
