@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README 
-%attr(755,root,root) %{_bindir}/[dmp]*
+%attr(755,root,root) %{_bindir}/Audio-[dmp]*
 %{perl_sitearch}/Audio/*.pm
 %{perl_sitearch}/Audio/Data
 %dir %{perl_sitearch}/Audio/Play
@@ -118,12 +118,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files Tk
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/t*
+%attr(755,root,root) %{_bindir}/Audio-t*
 %{perl_sitearch}/Tk/Scope.pm
 
 %files devel
 %defattr(644,root,root,755)
-%doc README.porting
+%doc README.Porting
 %{perl_sitearch}/Audio/*.h
 %{perl_sitearch}/Audio/*.m
 %{perl_sitearch}/Audio/*.t
