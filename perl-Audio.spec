@@ -7,11 +7,12 @@ Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl):	Modu³ Perla Audio - pocz±tki funkcji do obróbki d¼wiêku w Perlu
 Name:		perl-Audio
 Version:	0.005
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 Patch0:		%{name}-nas-fix.patch
+Patch1:		%{name}-perl_version.patch
 BuildRequires:	nas-devel
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-16
@@ -42,7 +43,8 @@ Audio::Play::Net - sterownik nas do modu³u Audio.
 
 %prep
 %setup -q -n %{pdir}-%{version}
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 perl Makefile.PL
