@@ -1,0 +1,21 @@
+--- Audio-0.005/Play/Net/Net.xs.orig	Wed Aug  4 19:03:49 1999
++++ Audio-0.005/Play/Net/Net.xs	Sun Aug  4 11:07:20 2002
+@@ -67,6 +67,7 @@
+  int priv = 0;
+  AuEvent ev;
+  STRLEN samp = Audio_samples(au);
++ STRLEN na;
+  Sound s = SoundCreate(SoundFileFormatNone,
+                        little_endian ? AuFormatLinearSigned16LSB : AuFormatLinearSigned16MSB,
+                        1, au->rate, samp, SvPV(au->comment,na)); 
+--- Audio-0.005/Play/Net/Makefile.PL.orig	Wed Aug  4 19:03:49 1999
++++ Audio-0.005/Play/Net/Makefile.PL	Sun Aug  4 11:59:39 2002
+@@ -18,7 +18,7 @@
+  {
+   WriteMakefile(
+       'NAME'     => 'Audio::Play::Net',
+-      'LIBS'     => [q[-L/usr/X11R6/lib -L/usr/local/lib -laudio -lX11 -lsocket -lnsl -lm]],
++      'LIBS'     => [q[-L/usr/X11R6/lib -L/usr/local/lib -laudio]],
+       'INC'      => q[-I/usr/X11R6/include],
+       'clean'    => {FILES => "*% *.bak"},
+       'OBJECT'   => '$(O_FILES)',
