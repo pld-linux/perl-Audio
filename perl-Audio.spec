@@ -15,6 +15,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 # Source0-md5:	4b049ed18dbe7c2f84e7b26c4904683a
 Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
+BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	nas-devel
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -23,19 +24,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Audio Perl module - the beginnings of Audio manipulation routines from
 Perl. It can load or save Sun/Next .au/.snd files and play them via
-Network Audio Server (from ftp://ftp.x.org/) or native Sun (or
+ALSA, Network Audio Server (from ftp://ftp.x.org/) or native Sun (or
 compatible) /dev/audio.
 
 %description -l pl
-Modu³ Perla Audio - pocz±tki funkcji do obróbki d¼wiêku w Perlu. Modul
+Modu³ Perla Audio - pocz±tki funkcji do obróbki d¼wiêku w Perlu. Modu³
 ten potrafi wczytywaæ i zapisywaæ pliki .au/.snd z Suna/NeXTa oraz
-odtwarzaæ je przez NAS albo sunowskie (lub kompatybilne) /dev/audio.
+odtwarzaæ je przez sterowniki ALSA, NAS albo sunowskie (lub
+kompatybilne) /dev/audio.
 
 %package Play-Net
 Summary:	Audio::Play::Net - nas driver for Audio module
 Summary(pl):	Audio::Play::Net - sterownik nas do modu³u Audio
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description Play-Net
 Audio::Play::Net - nas driver for Audio module.
@@ -47,7 +49,7 @@ Audio::Play::Net - sterownik nas do modu³u Audio.
 Summary:	Tk interface to Audio Perl module
 Summary(pl):	Interfejs Tk do modu³u Perla Audio
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description Tk
 Tk interface to Audio Perl module.
@@ -59,7 +61,7 @@ Interfejs Tk do modu³u Perla Audio.
 Summary:	Audio Perl module - development files
 Summary(pl):	Modu³ Perla Audio - pliki nag³ówkowe
 Group:		Development/Languages/Perl
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Audio Perl module - development files.
@@ -75,7 +77,8 @@ Modu³ Perla Audio - pliki nag³ówkowe.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} \
+	OPTIMIZE="%{rpmcflags} -DALSA_PCM_OLD_HW_PARAMS_API"
 
 %{?with_tests:%{__make} test}
 
@@ -103,6 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Audio/Play
 %{perl_vendorarch}/Audio/Play/linux.pm
 %dir %{perl_vendorarch}/auto/Audio/Data
+%{perl_vendorarch}/auto/Audio/Data/autosplit.ix
+%{perl_vendorarch}/auto/Audio/Data/solve_polynomial.al
 %{perl_vendorarch}/auto/Audio/Data/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Audio/Data/*.so
 %dir %{perl_vendorarch}/auto/Audio/Play
