@@ -4,7 +4,7 @@
  package Audio::Data;
  
  # PerlIO calls used in .xs code
--require 5.00302;  
+-require 5.00302;
 +require 5.003_02;  
  
  require DynaLoader;
@@ -15,7 +15,7 @@
  package Audio::Play::Net;
  # PerlIO calls used in .xs code
 -require 5.00302;  
-+require 5.003_02;  
++require 5.003_02;
  require Audio::Play;
  @ISA = qw(Audio::Play);
  $VERSION = "0.001";
