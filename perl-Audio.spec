@@ -11,6 +11,7 @@ Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
+# Source0-md5:	ea14f42baed2d5dede53dd8050a0f2f1
 Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
 BuildRequires:	nas-devel
