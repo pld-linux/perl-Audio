@@ -1,6 +1,7 @@
 #
 # Conditional build:
-# _with_tests - perform "make test" (needs working, not busy /dev/audio!)
+%bcond_with	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Audio
 Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
@@ -76,7 +77,7 @@ Modu³ Perla Audio - pliki nag³ówkowe.
 	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
