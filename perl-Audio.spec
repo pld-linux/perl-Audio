@@ -3,7 +3,7 @@
 %bcond_with	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Audio
+%define		pdir	Audio
 Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl):	Modu³ Perla Audio - pocz±tki funkcji do obróbki d¼wiêku w Perlu
 Name:		perl-Audio
