@@ -6,8 +6,8 @@
 Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl):	Modu³ Perla Audio - pocz±tki funkcji do obróbki d¼wiêku w Perlu
 Name:		perl-Audio
-Version:	0.005
-Release:	2
+Version:	1.000
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
@@ -41,6 +41,30 @@ Audio::Play::Net - nas driver for Audio module.
 %description Play-Net -l pl
 Audio::Play::Net - sterownik nas do modu³u Audio.
 
+%package Tk
+Summary:	Tk interface to Audio Perl module
+Summary(pl):	Interfejs Tk do modu³u Perla Audio
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+
+%description Tk
+Tk interface to Audio Perl module.
+
+%description Tk -l pl
+Interfejs Tk do modu³u Perla Audio.
+
+%package devel
+Summary:	Audio Perl module - development files
+Summary(pl):	Modu³ Perla Audio - pliki nag³ówkowe
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}
+
+%description devel
+Audio Perl module - development files.
+
+%description devel -l pl
+Modu³ Perla Audio - pliki nag³ówkowe.
+
 %prep
 %setup -q -n %{pdir}-%{version}
 %patch0 -p1
@@ -69,11 +93,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_bindir}/*
-%{perl_sitearch}/Audio/Data.pm
+%doc README 
+%attr(755,root,root) %{_bindir}/[dmp]*
+%{perl_sitearch}/Audio/*.pm
 %{perl_sitearch}/Audio/Data
-%{perl_sitearch}/Audio/Play.pm
 %dir %{perl_sitearch}/Audio/Play
 %{perl_sitearch}/Audio/Play/linux.pm
 %dir %{perl_sitearch}/auto/Audio/Data
@@ -84,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Audio/Play/linux
 %{perl_sitearch}/auto/Audio/Play/linux/*.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Audio/Play/linux/*.so
+%{_mandir}/man3/*
 
 %files Play-Net
 %defattr(644,root,root,755)
@@ -91,3 +115,16 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_sitearch}/auto/Audio/Play/Net
 %{perl_sitearch}/auto/Audio/Play/Net/*.bs
 %attr(755,root,root) %{perl_sitearch}/auto/Audio/Play/Net/*.so
+
+%files Tk
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/t*
+%{perl_sitearch}/Tk/Scope.pm
+
+%files devel
+%defattr(644,root,root,755)
+%doc README.porting
+%{perl_sitearch}/Audio/*.h
+%{perl_sitearch}/Audio/*.m
+%{perl_sitearch}/Audio/*.t
+%{perl_sitearch}/Audio/typemap
