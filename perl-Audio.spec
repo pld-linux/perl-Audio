@@ -73,7 +73,7 @@ Modu³ Perla Audio - pliki nag³ówkowe.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{?_with_tests:%{__make} test}
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README 
+%doc README
 %attr(755,root,root) %{_bindir}/Audio-[dmp]*
 %{perl_vendorarch}/Audio/*.pm
 %{perl_vendorarch}/Audio/Data
