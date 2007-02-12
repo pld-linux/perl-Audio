@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Audio
 Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
-Summary(pl):	Modu≥ Perla Audio - pocz±tki funkcji do obrÛbki dºwiÍku w Perlu
+Summary(pl.UTF-8):   Modu≈Ç Perla Audio - poczƒÖtki funkcji do obr√≥bki d≈∫wiƒôku w Perlu
 Name:		perl-Audio
 Version:	1.029
 Release:	1
@@ -27,47 +27,47 @@ Perl. It can load or save Sun/Next .au/.snd files and play them via
 ALSA, Network Audio Server (from ftp://ftp.x.org/) or native Sun (or
 compatible) /dev/audio.
 
-%description -l pl
-Modu≥ Perla Audio - pocz±tki funkcji do obrÛbki dºwiÍku w Perlu. Modu≥
-ten potrafi wczytywaÊ i zapisywaÊ pliki .au/.snd z Suna/NeXTa oraz
-odtwarzaÊ je przez sterowniki ALSA, NAS albo sunowskie (lub
+%description -l pl.UTF-8
+Modu≈Ç Perla Audio - poczƒÖtki funkcji do obr√≥bki d≈∫wiƒôku w Perlu. Modu≈Ç
+ten potrafi wczytywaƒá i zapisywaƒá pliki .au/.snd z Suna/NeXTa oraz
+odtwarzaƒá je przez sterowniki ALSA, NAS albo sunowskie (lub
 kompatybilne) /dev/audio.
 
 %package Play-Net
 Summary:	Audio::Play::Net - nas driver for Audio module
-Summary(pl):	Audio::Play::Net - sterownik nas do modu≥u Audio
+Summary(pl.UTF-8):   Audio::Play::Net - sterownik nas do modu≈Çu Audio
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description Play-Net
 Audio::Play::Net - nas driver for Audio module.
 
-%description Play-Net -l pl
-Audio::Play::Net - sterownik nas do modu≥u Audio.
+%description Play-Net -l pl.UTF-8
+Audio::Play::Net - sterownik nas do modu≈Çu Audio.
 
 %package Tk
 Summary:	Tk interface to Audio Perl module
-Summary(pl):	Interfejs Tk do modu≥u Perla Audio
+Summary(pl.UTF-8):   Interfejs Tk do modu≈Çu Perla Audio
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description Tk
 Tk interface to Audio Perl module.
 
-%description Tk -l pl
-Interfejs Tk do modu≥u Perla Audio.
+%description Tk -l pl.UTF-8
+Interfejs Tk do modu≈Çu Perla Audio.
 
 %package devel
 Summary:	Audio Perl module - development files
-Summary(pl):	Modu≥ Perla Audio - pliki nag≥Ûwkowe
+Summary(pl.UTF-8):   Modu≈Ç Perla Audio - pliki nag≈Ç√≥wkowe
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Audio Perl module - development files.
 
-%description devel -l pl
-Modu≥ Perla Audio - pliki nag≥Ûwkowe.
+%description devel -l pl.UTF-8
+Modu≈Ç Perla Audio - pliki nag≈Ç√≥wkowe.
 
 %prep
 %setup -q -n %{pdir}-%{version}
