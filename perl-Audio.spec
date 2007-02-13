@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Audio
 Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
-Summary(pl.UTF-8):   Moduł Perla Audio - początki funkcji do obróbki dźwięku w Perlu
+Summary(pl.UTF-8):	Moduł Perla Audio - początki funkcji do obróbki dźwięku w Perlu
 Name:		perl-Audio
 Version:	1.029
 Release:	1
@@ -35,7 +35,7 @@ kompatybilne) /dev/audio.
 
 %package Play-Net
 Summary:	Audio::Play::Net - nas driver for Audio module
-Summary(pl.UTF-8):   Audio::Play::Net - sterownik nas do modułu Audio
+Summary(pl.UTF-8):	Audio::Play::Net - sterownik nas do modułu Audio
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
@@ -47,7 +47,7 @@ Audio::Play::Net - sterownik nas do modułu Audio.
 
 %package Tk
 Summary:	Tk interface to Audio Perl module
-Summary(pl.UTF-8):   Interfejs Tk do modułu Perla Audio
+Summary(pl.UTF-8):	Interfejs Tk do modułu Perla Audio
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
@@ -59,7 +59,7 @@ Interfejs Tk do modułu Perla Audio.
 
 %package devel
 Summary:	Audio Perl module - development files
-Summary(pl.UTF-8):   Moduł Perla Audio - pliki nagłówkowe
+Summary(pl.UTF-8):	Moduł Perla Audio - pliki nagłówkowe
 Group:		Development/Languages/Perl
 Requires:	%{name} = %{version}-%{release}
 
