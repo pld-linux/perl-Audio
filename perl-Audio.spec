@@ -8,13 +8,14 @@ Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl.UTF-8):	Moduł Perla Audio - początki funkcji do obróbki dźwięku w Perlu
 Name:		perl-Audio
 Version:	1.029
-Release:	5
+Release:	6
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 # Source0-md5:	58b67ade294b960f617d9ccc495f07f1
 Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
+Patch2:		format-security.patch
 BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	nas-devel
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -73,6 +74,7 @@ Moduł Perla Audio - pliki nagłówkowe.
 %setup -q -n %{pdir}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__perl} Makefile.PL \

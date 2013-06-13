@@ -1,0 +1,11 @@
+--- Audio-1.029/Play/config/alsa.xs~	2004-01-06 09:14:19.000000000 +0100
++++ Audio-1.029/Play/config/alsa.xs	2013-06-13 16:42:21.839014538 +0200
+@@ -164,7 +164,7 @@
+        int err = snd_pcm_drain(dev->pcm);
+        if (err < 0)
+         {
+-         warn(snd_strerror(err));
++         warn("%s", snd_strerror(err));
+         }
+         break;
+       }
