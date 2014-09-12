@@ -111,12 +111,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Audio/Data
 %{perl_vendorarch}/auto/Audio/Data/autosplit.ix
 %{perl_vendorarch}/auto/Audio/Data/solve_polynomial.al
-%{perl_vendorarch}/auto/Audio/Data/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Audio/Data/*.so
 %dir %{perl_vendorarch}/auto/Audio/Play
 %{perl_vendorarch}/auto/Audio/Play/autosplit.ix
 %dir %{perl_vendorarch}/auto/Audio/Play/linux
-%{perl_vendorarch}/auto/Audio/Play/linux/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Audio/Play/linux/*.so
 %{_mandir}/man3/*
 
@@ -124,7 +122,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{perl_vendorarch}/Audio/Play/Net.pm
 %dir %{perl_vendorarch}/auto/Audio/Play/Net
-%{perl_vendorarch}/auto/Audio/Play/Net/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Audio/Play/Net/*.so
 
 %files Tk
