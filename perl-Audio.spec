@@ -1,9 +1,9 @@
 #
 # Conditional build:
 %bcond_with	tests	# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define		pdir	Audio
+%include	/usr/lib/rpm/macros.perl
 Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl.UTF-8):	Moduł Perla Audio - początki funkcji do obróbki dźwięku w Perlu
 Name:		perl-Audio
@@ -16,6 +16,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
 Patch2:		format-security.patch
+URL:		http://search.cpan.org/dist/Audio/
 BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	nas-devel
 BuildRequires:	perl-devel >= 1:5.8.0
