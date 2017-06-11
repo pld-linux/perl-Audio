@@ -8,7 +8,7 @@ Summary:	Audio Perl module - beginnings of Audio manipulation routines from Perl
 Summary(pl.UTF-8):	Moduł Perla Audio - początki funkcji do obróbki dźwięku w Perlu
 Name:		perl-Audio
 Version:	1.029
-Release:	12
+Release:	13
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
