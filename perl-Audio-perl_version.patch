@@ -1,16 +1,18 @@
---- Audio-0.005/Data/Data.pm.orig	Sun Aug  4 21:29:03 2002
-+++ Audio-0.005/Data/Data.pm	Sun Aug  4 21:29:21 2002
-@@ -1,7 +1,7 @@
- package Audio::Data;
+diff -urNp -x '*.orig' Audio-1.029.org/Data/Data.pm Audio-1.029/Data/Data.pm
+--- Audio-1.029.org/Data/Data.pm	2004-06-02 20:46:25.000000000 +0200
++++ Audio-1.029/Data/Data.pm	2021-05-07 23:13:40.926268154 +0200
+@@ -7,7 +7,7 @@ our @EXPORT_OK = qw(solve_polynomial);
+ sub solve_polynomial;
  
  # PerlIO calls used in .xs code
 -require 5.00302;
 +require 5.003_02;  
  
- require DynaLoader;
- @ISA = qw(DynaLoader);
---- Audio-0.005/Play/Net/Net.pm.orig	Sun Aug  4 21:38:01 2002
-+++ Audio-0.005/Play/Net/Net.pm	Sun Aug  4 21:38:05 2002
+ use XSLoader;
+ our $VERSION = sprintf '1.%03d', (q$Revision: #14 $ =~ /\D(\d+)\s*$/)[0] + 15;
+diff -urNp -x '*.orig' Audio-1.029.org/Play/Net/Net.pm Audio-1.029/Play/Net/Net.pm
+--- Audio-1.029.org/Play/Net/Net.pm	2003-08-05 21:18:56.000000000 +0200
++++ Audio-1.029/Play/Net/Net.pm	2021-05-07 23:13:40.926268154 +0200
 @@ -1,6 +1,6 @@
  package Audio::Play::Net;
  # PerlIO calls used in .xs code
