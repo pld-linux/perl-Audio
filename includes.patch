@@ -1,0 +1,9 @@
+--- Audio-1.029/Play/config/Net.c.orig	2003-08-05 21:18:56.000000000 +0200
++++ Audio-1.029/Play/config/Net.c	2025-07-31 02:21:37.085048429 +0200
+@@ -1,5 +1,6 @@
+ #include <audio/audiolib.h>
+ #include <audio/soundlib.h>
++#include <stdlib.h>
+ 
+ int main(argc,argv)
+ int argc;

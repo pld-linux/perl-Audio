@@ -15,6 +15,7 @@ Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 Patch0:		%{name}-nas-fix.patch
 Patch1:		%{name}-perl_version.patch
 Patch2:		format-security.patch
+Patch3:		includes.patch
 URL:		http://search.cpan.org/dist/Audio/
 BuildRequires:	alsa-lib-devel >= 0.9.0
 BuildRequires:	nas-devel
@@ -75,6 +76,7 @@ Moduł Perla Audio - pliki nagłówkowe.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
 
 %build
 %{__perl} Makefile.PL \
